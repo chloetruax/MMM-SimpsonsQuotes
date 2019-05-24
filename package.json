@@ -1,0 +1,12 @@
+{
+  "name": "mmm-reddit-writing-prompts",
+  "version": "1.0.0",
+  "description": "Magic Mirror Package to pull some of the hot posts from Reddit's r/aww and displays them at random. Updates every minute and repulls every 20 mins",
+  "main": "MMM-RedditAwww.js",
+  "scripts": {
+    "start": "node MMM-RedditAww",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

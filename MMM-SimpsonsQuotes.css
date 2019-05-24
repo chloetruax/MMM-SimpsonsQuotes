@@ -1,0 +1,17 @@
+.simpsonsQuotes-charImage{
+    max-width: 100px;
+    height: auto;
+}
+
+.simpsonsQuotes-credit{
+    font-size: 16px;
+    line-height: 16px;
+    text-align: right;
+}
+
+.simpsonsQuotes-quote{
+    font-size: 12px;
+    line-height: 12px;
+    text-align: center;
+}
+
