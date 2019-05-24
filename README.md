@@ -4,7 +4,7 @@ Simple Magic Mirror Module that pulls random simpsons quotes from an API. Allows
 
 
 
-## Example Of the Post
+## Example of the Quote
 ![ExamplePosts](./MMM-SimpsonsQuotes.PNG)
 
 ## Configuration

@@ -1,16 +1,16 @@
 /* global Module */
 /* Magic Mirror
- * Module: MM Reddit Posts From r/aww
+ * Module: MM Simpsons Quotes
  *
  * By Mike Truax
  * MIT Licensed.
  */
 
-Module.register("MMM-RedditAww", {
+Module.register("MMM-SimpsonsQuotes", {
 
 	// Default module config.
 	defaults: {
-		updateTime: 5000, 
+		updateTime: 120000, 
 		showCharacterImage: true 
 	},
 	quoteObject: null, 
@@ -37,21 +37,23 @@ Module.register("MMM-RedditAww", {
 		fetch('https://thesimpsonsquoteapi.glitch.me/quotes')
 			.then(res => res.json())
 			.then(quote => {
-				self.quoteObject = quote;
+				self.quoteObject = quote[0];
 				self.updateDom()
 			})
 	},
 	// Override dom generator.
 	getDom: function () {
 		let wrapper = document.createElement("div");
+		wrapper.classList.add("simpsonsQuotesContainer")
 		if(!this.quoteObject){
 			return wrapper;
 		}
+		Log.info(this.quoteObject);
 		if(this.config.showCharacterImage){
 			wrapper.appendChild(this.createElement("img", "simpsonsQuotes-charImage", this.quoteObject.image))
 		}
 		wrapper.appendChild(this.createElement("div", "simpsonsQuotes-quote",this.quoteObject.quote))
-		wrapper.appendChild(this.createElement("div", "simpsonsQuotes-credit",this.quoteObject.character))
+		wrapper.appendChild(this.createElement("div", "simpsonsQuotes-credit","- " + this.quoteObject.character))
 		return wrapper;
 	},
 	createElement(el, className, text){
@@ -63,6 +65,6 @@ Module.register("MMM-RedditAww", {
 		else{
 		element.innerText = text
 		}
-		return el;
+		return element;
 	}
 });
