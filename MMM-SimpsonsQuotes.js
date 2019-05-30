@@ -10,7 +10,7 @@ Module.register("MMM-SimpsonsQuotes", {
 
 	// Default module config.
 	defaults: {
-		updateTime: 120000, 
+		updateTime: 300000, 
 		showCharacterImage: true 
 	},
 	quoteObject: null, 
